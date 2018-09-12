@@ -4,15 +4,53 @@ export const FETCH_POKEMON_START = 'FETCH_POKEMON_START';
 export const RECEIVED_POKEMON = 'RECEIVED_POKEMON';
 export const FETCH_POKEMON_ERROR = 'FETCH_POKEMON_ERROR';
 
-export function fetchPokemons() {
+export const CURRENT_PAGE_INCREMENT = 'CURRENT_PAGE_INCREMENT';
+export const CURRENT_PAGE_DECREMENT = 'CURRENT_PAGE_DECREMENT';
+
+
+export function fetchPokemons(pageNumber = 1) {
   return dispatch => {
-    dispatch({type: FETCH_POKEMON_START})
-    axios.get(`http://localhost:3004/pokemon`)
+    dispatch(fetchPokemonsStart())
+    axios.get(`http://localhost:3004/pokemon?_page=${pageNumber}&_limit=12`)
       .then(response => {
-        dispatch({type: RECEIVED_POKEMON, payload: response.data})
+        dispatch(receivedPokemon(response))
       })
       .catch(err => {
-        dispatch({type: FETCH_POKEMON_ERROR, payload: err})
+        dispatch(fetchPokemonError(err))
       })
+  }
+}
+
+export function fetchPokemonsStart() {
+  return {
+    type: FETCH_POKEMON_START
+  }
+}
+
+export function receivedPokemon(response) {
+  return {
+    type: RECEIVED_POKEMON, 
+    payload: response.data
+  }
+}
+
+export function fetchPokemonError(err) {
+  return {
+    type: FETCH_POKEMON_ERROR, 
+    payload: err
+  }
+}
+
+export function pageIncrement() {
+  return {
+    type: CURRENT_PAGE_INCREMENT,
+    payload: 1
+  }
+}
+
+export function pageDecrement() {
+  return {
+    type: CURRENT_PAGE_DECREMENT,
+    payload: 1
   }
 }

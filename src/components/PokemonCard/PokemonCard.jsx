@@ -6,7 +6,7 @@ const PokemonCard = props => {
 
   return (
     <li className="card">
-      <img className="card-img-top card-size" src={img} alt="Pokemon" />
+      <img className="card-img-top card-img-size" src={img} alt="Pokemon" />
       <div className="card-body">
         <h5 className="card-title m-2">{`#${num} ${name}`}</h5>
         <ul className="pokemon-type-list">
