@@ -4,10 +4,3 @@
   justify-content: space-evenly;
   padding: 0;
 }
-
-.button-area {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  padding: 0;
-}

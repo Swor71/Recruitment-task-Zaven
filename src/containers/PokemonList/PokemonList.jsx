@@ -3,6 +3,7 @@ import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import { fetchPokemons } from '../../actions/actions';
 import { connect } from 'react-redux';
 import { pageDecrement, pageIncrement } from '../../actions/actions';
+import Pagination from '../../components/Pagination/Pagination';
 
 import './PokemonList.css';
 
@@ -11,14 +12,14 @@ class PokemonList extends Component {
     this.props.dispatch(fetchPokemons());
   }
 
-  async handlePrevPageClick() {
+  async handlePrevPage() {
     console.log(this.props.currentPage);
 
     await this.props.dispatch(pageDecrement());
     this.props.dispatch(fetchPokemons(this.props.currentPage));
   }
 
-  async handleNextPageClick() {
+  async handleNextPage() {
     console.log(this.props.currentPage);
 
     await this.props.dispatch(pageIncrement());
@@ -26,7 +27,7 @@ class PokemonList extends Component {
   }
 
   render() {
-    const { pokemonList } = this.props;
+    const { pokemonList, currentPage } = this.props;
 
     return (
       <div>
@@ -35,14 +36,11 @@ class PokemonList extends Component {
             <PokemonCard key={key} pokemon={pokemon} />
           ))}
         </ul>
-        <footer className="button-area">
-          <button className="btn btn-info" onClick={() => this.handlePrevPageClick()}>
-            Previous Page
-          </button>
-          <button className="btn btn-info" onClick={() => this.handleNextPageClick()}>
-            Next Page
-          </button>
-        </footer>
+        <Pagination
+          currentPage={currentPage}
+          prevPage={() => this.handlePrevPage()}
+          nextPage={() => this.handleNextPage()}
+        />
       </div>
     );
   }
