@@ -1,0 +1,29 @@
+.card {
+  width: 240px;
+  text-align: center;
+  margin: 10px;
+}
+
+.pokemon-type-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.card-size {
+  width: 160px !important;
+  height: 160px;
+  margin: 0 auto;
+}
+
+.badge-poison {
+  background-color: yellowgreen;
+  color: #fff;
+}
+
+.badge-bug {
+  background-color: sienna;
+  color: #fff;
+}

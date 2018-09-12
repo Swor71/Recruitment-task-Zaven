@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import PokemonList from './containers/PokemonList/PokemonList';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        
+      <div className="container">
+        <PokemonList></PokemonList>
       </div>
     );
   }
