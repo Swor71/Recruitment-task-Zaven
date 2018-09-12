@@ -30,7 +30,7 @@ class PokemonList extends Component {
     const { pokemonList, currentPage } = this.props;
 
     return (
-      <div>
+      <div className="container">
         <ul className="pokemon-list">
           {pokemonList.map((pokemon, key) => (
             <PokemonCard key={key} pokemon={pokemon} />
