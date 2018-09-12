@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './PokemonCard.css';
 
 const PokemonCard = props => {
@@ -11,27 +10,11 @@ const PokemonCard = props => {
       <div className="card-body">
         <h5 className="card-title m-2">{`#${num} ${name}`}</h5>
         <ul className="pokemon-type-list">
-          {type.map((type, key) => {
-            let classes = 'badge m-2 badge-';
-            switch (type) {
-              case 'Poison':
-                classes += 'poison';
-                break;
-              case 'Grass':
-                classes += 'success';
-                break;
-              case 'Fire':
-                classes += 'danger';
-                break;
-              default:
-                break;
-            }
-            return (
-              <li key={key} className="pokemon-attribute">
-                <span className={classes}>{type}</span>
-              </li>
-            );
-          })}
+          {type.map((type, key) => (
+            <li key={key} className="pokemon-attribute">
+              <span className={`badge m-2 badge-${type}`}>{type}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </li>

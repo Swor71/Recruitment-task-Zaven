@@ -4,6 +4,16 @@
   margin: 10px;
 }
 
+.card-size {
+  width: 160px !important;
+  height: 160px;
+  margin: 0 auto;
+}
+
+.card-body {
+  min-height: 140px;
+}
+
 .pokemon-type-list {
   list-style-type: none;
   display: flex;
@@ -12,18 +22,87 @@
   padding: 0;
 }
 
-.card-size {
-  width: 160px !important;
-  height: 160px;
-  margin: 0 auto;
+.button-area {
+  display: flex;
+  justify-content: space-around;
 }
 
-.badge-poison {
+.badge-Grass {
+  background-color: olivedrab;
+  color: #fff;
+}
+
+.badge-Poison {
   background-color: yellowgreen;
   color: #fff;
 }
 
-.badge-bug {
+.badge-Water {
+  background-color: royalblue;
+  color: #fff;
+}
+
+.badge-Fire {
+  background-color: orangered;
+  color: #fff;
+}
+
+.badge-Bug {
   background-color: sienna;
   color: #fff;
+}
+
+.badge-Flying {
+  background-color: lightskyblue;
+  color: #000;
+}
+
+.badge-Normal {
+  background-color: darkgrey;
+  color: #000;
+}
+
+.badge-Electric {
+  background-color: blueviolet;
+  color: #000;
+}
+
+.badge-Ground {
+  background-color: maroon;
+  color: #fff;
+}
+
+.badge-Fighting {
+  background-color: tomato;
+  color: #fff;
+}
+
+.badge-Psychic {
+  background-color: teal;
+  color: #fff;
+}
+
+.badge-Rock {
+  background-color: palevioletred;
+  color: #fff;
+}
+
+.badge-Dragon {
+  background-color: midnightblue;
+  color: #fff;
+}
+
+.badge-Ice {
+  background-color: mediumturquoise;
+  color: #000;
+}
+
+.badge-Steel {
+  background-color: steelblue;
+  color: #000;
+}
+
+.badge-Ghost {
+  border: 1px dotted black;
+  color: #777;
 }
