@@ -6,6 +6,7 @@ export const FETCH_POKEMON_ERROR = 'FETCH_POKEMON_ERROR';
 
 export const CURRENT_PAGE_INCREMENT = 'CURRENT_PAGE_INCREMENT';
 export const CURRENT_PAGE_DECREMENT = 'CURRENT_PAGE_DECREMENT';
+export const MODAL_TOGGLE = 'MODAL_TOGGLE';
 
 
 export function fetchPokemons(pageNumber = 1) {
@@ -41,6 +42,7 @@ export function fetchPokemonError(err) {
   }
 }
 
+
 export function pageIncrement() {
   return {
     type: CURRENT_PAGE_INCREMENT,
@@ -52,5 +54,12 @@ export function pageDecrement() {
   return {
     type: CURRENT_PAGE_DECREMENT,
     payload: 1
+  }
+}
+
+export function modalToggle(singlePokemon) {
+  return {
+    type: MODAL_TOGGLE,
+    payload: singlePokemon
   }
 }

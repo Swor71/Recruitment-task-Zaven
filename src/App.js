@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PokemonList from './containers/PokemonList/PokemonList';
 import Navbar from './components/Navbar/Navbar';
-import { fetchPokemons, pageIncrement, pageDecrement } from './actions/actions';
+import { fetchPokemons, pageIncrement, pageDecrement, modalToggle } from './actions/actions';
 import { connect } from 'react-redux';
 
 class App extends Component {
@@ -19,6 +19,13 @@ class App extends Component {
     this.props.dispatch(fetchPokemons(this.props.currentPage));
   }
 
+  modalToggle(id) {
+     let singlePokemon = this.props.pokemonList.filter(item => item.id === id)
+    console.log(singlePokemon);
+    
+    this.props.dispatch(modalToggle(singlePokemon));
+  }
+
   render() {
     const { currentPage } = this.props;
     return (
@@ -26,7 +33,7 @@ class App extends Component {
         <Navbar currentPage={currentPage}
         prevPage={() => this.handlePrevPage()}
         nextPage={() => this.handleNextPage()} />
-        <PokemonList />
+        <PokemonList modalToggle={(id) => this.modalToggle(id)} />
       </div>
     );
   }

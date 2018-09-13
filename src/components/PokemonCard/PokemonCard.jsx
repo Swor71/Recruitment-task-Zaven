@@ -2,10 +2,10 @@ import React from 'react';
 import './PokemonCard.css';
 
 const PokemonCard = props => {
-  const { num, name, img, type } = props.pokemon;
+  const { num, name, img, type, id } = props.pokemon;
 
   return (
-    <li className="card">
+    <li className="card" onClick={() => props.modalToggle(id)}>
       <img className="card-img-top mt-1 card-img-size" src={img} alt="Pokemon" />
       <div className="card-body">
         <h5 className="">{`#${num}`}</h5>

@@ -1,12 +1,15 @@
 import { 
-  FETCH_POKEMON_ERROR, 
-  FETCH_POKEMON_START, 
+  FETCH_POKEMON_ERROR,
+  FETCH_POKEMON_START,
   RECEIVED_POKEMON,
-  CURRENT_PAGE_DECREMENT,
-  CURRENT_PAGE_INCREMENT } from '../actions/actions';
+  CURRENT_PAGE_INCREMENT,
+  CURRENT_PAGE_DECREMENT, 
+  MODAL_TOGGLE } from '../actions/actions';
 
 const initialState = {
   pokemonList: [],
+  modalOpen: false,
+  singlePokemon: [],
   fetching: false,
   fetched: false,
   error: null,
@@ -24,13 +27,13 @@ export default function reducer(state = initialState, action) {
         fetched: true, 
         pokemonList: action.payload
       }
-    case FETCH_POKEMON_ERROR:
-      return {
-        ...state, 
-        fetching: false, 
-        fetched: false, 
-        error: action.payload
-      }
+      case FETCH_POKEMON_ERROR:
+        return {
+          ...state, 
+          fetching: false, 
+          fetched: false, 
+          error: action.payload
+        }
       case CURRENT_PAGE_INCREMENT:
         if (state.currentPage === 11) {
           return {
@@ -63,6 +66,12 @@ export default function reducer(state = initialState, action) {
             currentPage: state.currentPage - action.payload
         }
       }
+      case MODAL_TOGGLE:
+        return {
+          ...state,
+          modalOpen: !state.modalOpen,
+          singlePokemon: action.payload
+        }
     default:
       return state;
   }
