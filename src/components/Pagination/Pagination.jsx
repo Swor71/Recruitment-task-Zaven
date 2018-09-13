@@ -10,8 +10,8 @@ const Pagination = props => {
       <button className={`${btnClasses} ${currentPage <= 1 ? 'disabled' : ''}`} onClick={() => props.prevPage()}>
         Previous Page
       </button>
-      <span>{`Page ${currentPage} / 13`}</span>
-      <button className={`${btnClasses} ${currentPage >= 13 ? 'disabled' : ''}`} onClick={() => props.nextPage()}>
+      <span>{`Page ${currentPage} / 11`}</span>
+      <button className={`${btnClasses} ${currentPage >= 11 ? 'disabled' : ''}`} onClick={() => props.nextPage()}>
         Next Page
       </button>
     </footer>

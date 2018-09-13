@@ -13,15 +13,11 @@ class PokemonList extends Component {
   }
 
   async handlePrevPage() {
-    console.log(this.props.currentPage);
-
     await this.props.dispatch(pageDecrement());
     this.props.dispatch(fetchPokemons(this.props.currentPage));
   }
 
   async handleNextPage() {
-    console.log(this.props.currentPage);
-
     await this.props.dispatch(pageIncrement());
     this.props.dispatch(fetchPokemons(this.props.currentPage));
   }

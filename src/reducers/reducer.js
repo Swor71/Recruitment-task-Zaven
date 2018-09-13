@@ -32,12 +32,12 @@ export default function reducer(state = initialState, action) {
         error: action.payload
       }
       case CURRENT_PAGE_INCREMENT:
-        if (state.currentPage === 13) {
+        if (state.currentPage === 11) {
           return {
             ...state, 
             fetching: false, 
             fetched: true, 
-            currentPage: 13
+            currentPage: 11
           }
         } else {
           return {

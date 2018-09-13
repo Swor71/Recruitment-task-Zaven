@@ -1,12 +1,13 @@
 .card {
-  width: 240px;
+  width: 200px;
   text-align: center;
-  margin: 10px;
+  margin: 10px 5px 0 5px;
+  border: 1px solid rgba(23, 162, 184, 0.3) !important;
 }
 
 .card-img-size {
-  width: 160px !important;
-  height: 160px;
+  width: 120px !important;
+  height: 120px;
   margin: 0 auto;
 }
 
@@ -64,7 +65,7 @@
 
 .badge-Electric {
   background-color: blueviolet;
-  color: #000;
+  color: #fff;
 }
 
 .badge-Ground {

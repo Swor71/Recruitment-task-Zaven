@@ -11,7 +11,7 @@ export const CURRENT_PAGE_DECREMENT = 'CURRENT_PAGE_DECREMENT';
 export function fetchPokemons(pageNumber = 1) {
   return dispatch => {
     dispatch(fetchPokemonsStart())
-    axios.get(`http://localhost:3004/pokemon?_page=${pageNumber}&_limit=12`)
+    axios.get(`http://localhost:3004/pokemon?_page=${pageNumber}&_limit=15`)
       .then(response => {
         dispatch(receivedPokemon(response))
       })
