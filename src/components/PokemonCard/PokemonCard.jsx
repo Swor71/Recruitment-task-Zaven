@@ -6,14 +6,14 @@ const PokemonCard = props => {
 
   return (
     <li className="card">
-      <img className="card-img-top card-img-size" src={img} alt="Pokemon" />
+      <img className="card-img-top mt-1 card-img-size" src={img} alt="Pokemon" />
       <div className="card-body">
         <h5 className="">{`#${num}`}</h5>
         <h4 className="cart-title">{name}</h4>
         <ul className="pokemon-type-list">
           {type.map((type, key) => (
             <li key={key} className="pokemon-attribute">
-              <span className={`badge m-2 badge-${type}`}>{type}</span>
+              <span className={`badge mx-1 badge-${type}`}>{type}</span>
             </li>
           ))}
         </ul>

@@ -3,18 +3,18 @@ import React from 'react';
 const Pagination = props => {
   const { currentPage } = props;
 
-  let btnClasses = 'btn btn-info';
+  let btnClasses = 'btn btn-outline-light';
 
   return (
-    <footer className="d-flex justify-content-around mb-3">
+    <div className="d-flex justify-content-between">
       <button className={`${btnClasses} ${currentPage <= 1 ? 'disabled' : ''}`} onClick={() => props.prevPage()}>
         Previous Page
       </button>
-      <span>{`Page ${currentPage} / 11`}</span>
+      <h4 className="mx-5">{`Page ${currentPage} / 11`}</h4>
       <button className={`${btnClasses} ${currentPage >= 11 ? 'disabled' : ''}`} onClick={() => props.nextPage()}>
         Next Page
       </button>
-    </footer>
+    </div>
   );
 };
 
