@@ -95,10 +95,20 @@
 
 .badge-Steel {
   background-color: steelblue;
-  color: #000;
+  color: #fff;
 }
 
 .badge-Ghost {
   border: 1px dotted black;
   color: #777;
+}
+
+.badge-Fairy {
+  background-color: deeppink;
+  color: #fff;
+}
+
+.badge-Dark {
+  background-color: #000;
+  color: #fff;
 }

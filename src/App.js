@@ -20,9 +20,7 @@ class App extends Component {
   }
 
   modalToggle(id) {
-     let singlePokemon = this.props.pokemonList.filter(item => item.id === id)
-    console.log(singlePokemon);
-    
+    let singlePokemon = this.props.pokemonList.filter(item => item.id === id)
     this.props.dispatch(modalToggle(singlePokemon));
   }
 
