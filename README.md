@@ -24,15 +24,18 @@ Clone or download project to your local machine and then run:
 npm install
 ```
 
-Run json-server:
+Run the script below to launch the app:
+
+```
+npm run pokemonapp
+```
+
+### Alternatively you can run two scripts as two seperate processes:
+
+Run:
 
 ```
 npm run json:server
-```
-
-Start up the app:
-
-```
 npm start
 ```
 
