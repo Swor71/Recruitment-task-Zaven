@@ -25,7 +25,7 @@ class PokemonModal extends React.Component {
         <div>
           <Modal isOpen={this.props.modalOpen}>
             <ModalHeader className="justify-content-center">
-              <h3>{name}</h3>
+              {name}
             </ModalHeader>
             <ModalBody className="d-flex justify-content-around px-2">
               <div className="d-flex align-items-center">
